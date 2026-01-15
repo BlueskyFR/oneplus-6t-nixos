@@ -1,0 +1,13 @@
+diff --git a/drivers/net/wireless/ath/regd.c b/drivers/net/wireless/ath/regd.c
+index f15e7bd690b5b..cb5aa4fe1654f 100644
+--- a/drivers/net/wireless/ath/regd.c
++++ b/drivers/net/wireless/ath/regd.c
+@@ -682,6 +682,8 @@ static void ath_regd_sanitize(struct ath_regulatory *reg)
+ 
+ static int __ath_regd_init(struct ath_regulatory *reg)
+ {
++	printk(KERN_DEBUG "ath: Using custom driver! UwU\n");
++
+ 	struct country_code_to_enum_rd *country = NULL;
+ 	u16 regdmn;
+ 

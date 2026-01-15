@@ -1,0 +1,35 @@
+diff --git a/drivers/net/wireless/ath/regd.c b/drivers/net/wireless/ath/regd.c
+index f15e7bd690b5b..38b0d968932a8 100644
+--- a/drivers/net/wireless/ath/regd.c
++++ b/drivers/net/wireless/ath/regd.c
+@@ -522,7 +522,8 @@ void ath_reg_notifier_apply(struct wiphy *wiphy,
+ 	if (!request)
+ 		return;
+ 
+-	reg->region = request->dfs_region;
++	// reg->region = request->dfs_region;
++	reg->region = NL80211_DFS_ETSI;
+ 	switch (request->initiator) {
+ 	case NL80211_REGDOM_SET_BY_CORE:
+ 		/*
+@@ -614,7 +615,7 @@ static u16 ath_regd_get_default_country(u16 rd)
+ 			return cc;
+ 	}
+ 
+-	return CTRY_DEFAULT;
++	return CTRY_FRANCE;
+ }
+ 
+ static struct reg_dmn_pair_mapping*
+@@ -702,9 +703,9 @@ static int __ath_regd_init(struct ath_regulatory *reg)
+ 
+ 	if (reg->country_code == CTRY_DEFAULT &&
+ 	    regdmn == CTRY_DEFAULT) {
+-		printk(KERN_DEBUG "ath: EEPROM indicates default "
++		printk(KERN_DEBUG "ath: WOW OMG EEPROM indicates default "
+ 		       "country code should be used\n");
+-		reg->country_code = CTRY_UNITED_STATES;
++		reg->country_code = CTRY_FRANCE;
+ 	}
+ 
+ 	if (reg->country_code == CTRY_DEFAULT) {
