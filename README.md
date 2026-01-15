@@ -9,6 +9,14 @@ It is my first time hacking & patching the Linux Kernel, so let's do it while cr
 
 The patches are mainly fiddling around with the ath\[10k\] driver to solve mac randomization issues and regulatory channels configuration issues, making it unable to scan certain SSIDs, like here in France & Switzerland.
 
+## 🎯 Project goal
+
+Build a Home Assistant dashboard display (kiosk) + host webservices.
+
+Integrate & merge with my [other systems global config](https://github.com/BlueskyFR/dotfiles) to manage everything from a single repo across different architectures.
+
+All of that for just a couple of Watts! ⚡
+
 ## Rebuild/update system
 
 **Using a remote builder:**
