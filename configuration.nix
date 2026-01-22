@@ -87,6 +87,9 @@ in {
 
     btop
     nix-output-monitor
+
+    # Kernel build
+    python3
   ];
 
   # Disable terminal login
@@ -165,7 +168,6 @@ in {
         zlib
         openssl.dev
         pkg-config
-        btop
       ];
     };
   };
