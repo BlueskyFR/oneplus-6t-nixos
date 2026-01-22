@@ -180,7 +180,9 @@ in {
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Customize the kernel with our own patches because why not
-  mobile.boot.stage-1.kernel.package = lib.mkForce (pkgs.callPackage ./custom-kernel {});
+  imports = [./kernel];
+
+  # mobile.boot.stage-1.kernel.modular = true;
   # self.images = {
   #   inherit
   #     (config.mobile.outputs.android)
